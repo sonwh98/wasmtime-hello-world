@@ -12,7 +12,7 @@ $ curl https://wasmtime.dev/install.sh -sSf | bash
 ```bash
 $ rustup target add wasm32-wasi
 ```
-
+- compile rust to wasm and execute with wasmtime
 ```bash
 $ rustc --target wasm32-wasi hello.rs -o hello.wasm
 $ wasmtime hello.wasm 
