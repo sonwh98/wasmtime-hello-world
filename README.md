@@ -17,4 +17,7 @@ $ rustup target add wasm32-wasi
 $ rustc --target wasm32-wasi hello.rs -o hello.wasm
 $ wasmtime hello.wasm 
 ```
-
+- install https://github.com/WebAssembly/wabt
+```bash
+$ brew install wabt
+```
