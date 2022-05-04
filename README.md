@@ -21,3 +21,7 @@ $ wasmtime hello.wasm
 ```bash
 $ brew install wabt
 ```
+
+wat2wasm simple.wat -o simple.wasm
+
+hexdump -C simple.wasm
