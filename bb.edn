@@ -1,0 +1,11 @@
+{:paths ["script"]
+ :deps {medley/medley {:mvn/version "1.3.0"}}
+ :min-bb-version "0.4.0"
+ :tasks  {:requires ([babashka.fs :as fs])
+          clean (fs/delete-tree "resources/public/compiled")
+          build (let [dest "resources/public/compiled"]
+                  (fs/create-dir dest)
+                  (shell (format "wat2wasm src/wat/hellolog.wat -o %s/hellolog.wasm" dest)))}
+ 
+ }
+

@@ -1,0 +1,14 @@
+(ns http-server
+  (:require [org.httpkit.server :as hk]
+            [ring.middleware.resource :as r]))
+
+(defn app [req]
+  {:status  200
+   :headers {"Content-Type" "text/html"}
+   :body    "hello HTTP!"})
+
+(hk/run-server (r/wrap-resource app "resources") {:port 8080})
+
+(comment
+  (load-file "src/clj/http_server.clj")
+  )
