@@ -5,7 +5,8 @@
           clean (fs/delete-tree "resources/public/compiled")
           build (let [dest "resources/public/compiled"]
                   (fs/create-dir dest)
-                  (shell (format "wat2wasm src/wat/hellolog.wat -o %s/hellolog.wasm" dest)))}
+                  (shell (format "wat2wasm src/wat/hellolog.wat -o %s/hellolog.wasm" dest)))
+          server (shell "clj src/clj/http_server.clj")}
  
  }
 
