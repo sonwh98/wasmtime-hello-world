@@ -22,11 +22,17 @@ $ wasmtime hello.wasm
 $ brew install wabt
 ```
 
+```bash
+brew install wasm3
+brew install hexcurse
+```
+
 wat2wasm simple.wat -o simple.wasm
 
 hexdump -C simple.wasm
 
 wasmtime add.wat --invoke add 1 2
 
-brew install wasm3
+
+
 wasm3 --repl add.wasm
