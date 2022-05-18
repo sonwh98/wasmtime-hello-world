@@ -6,6 +6,11 @@
 	<script src="/js/utils.js"></script>
     </head>
     <body>
+	<div class="container">
+	    <h1>Hello, World! (Sort of)</h1>
+	    I think you are <span id="age"></span> years old.
+	</div>
+	
 	<script>
 	 var importObject = {
 	     imports: {
@@ -16,6 +21,9 @@
 	 };
 	 fetchAndInstantiate('/compiled/hellolog.wasm', importObject).then(
 	     function(instance) {
+		 var ho = instance.exports.how_old(2021,2000);
+		 var ageEl = document.getElementById('age');
+		 ageEl.innerText=ho;
 		 console.log(instance.exports.log_how_old(2021, 2000));
 	     }
 	 );
